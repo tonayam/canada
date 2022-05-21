@@ -27,7 +27,7 @@
     color: #ace7e9;
   }
   header span::before {
-    content: "Easy";
+    content: "";
     animation: textChange 6s infinite linear;
   }
 
