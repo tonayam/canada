@@ -1,6 +1,20 @@
 @import "./styleSheets/text.css";
 @import "./styleSheets/reset.css";
 @import "./styleSheets/components.css";
+@keyframes textChange {
+  0% {
+    content: "Easy";
+  }
+  50% {
+    content: "Simple";
+  }
+  75% {
+    content: "Stress Free";
+  }
+  100% {
+    content: "Easy";
+  }
+}
 
 @media screen and (max-width: 450px) {
   header {
@@ -9,6 +23,11 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+  header span::before {
+    content: "Easy";
+    animation: textChange 6s infinite linear;
+  }
+
   .section .card {
     border: 3px solid white;
   }
