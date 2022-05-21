@@ -23,6 +23,9 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+  header span {
+    color: #ace7e9;
+  }
   header span::before {
     content: "Easy";
     animation: textChange 6s infinite linear;
