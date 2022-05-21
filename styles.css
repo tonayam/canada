@@ -1,0 +1,35 @@
+@import "./styleSheets/text.css";
+@import "./styleSheets/reset.css";
+@import "./styleSheets/components.css";
+
+@media screen and (max-width: 450px) {
+  header {
+    height: 100vh;
+    background: url(./Images/hero-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .section .card {
+    border: 3px solid white;
+  }
+  .testimonials img {
+    width: 20%;
+  }
+  .swiper-slide {
+    margin: 0 1rem;
+  }
+  .contact input {
+    margin: 1.5rem 0;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid black;
+  }
+  textarea {
+    width: 100%;
+    border: 1px solid black;
+    padding: 1rem;
+  }
+  footer ul {
+    list-style-type: none;
+  }
+}
