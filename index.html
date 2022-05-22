@@ -334,25 +334,24 @@
       });
     </script>
     <!-- International Telephone -->
-    <script src="./node_modules/intl-tel-input/build/js/intlTelInput.min.js"></script>
+    <script src="./node_modules/intl-tel-input/build/js/intlTelInput.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script> -->
     <!-- Initializing telephone script -->
     <script>
-      const phoneInputField = document.querySelector("#phone");
-      const phoneInput = window.intlTelInput(phoneInputField, {
-        utilsScript:
-          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      var input = document.querySelector("#phone");
+      window.intlTelInput(input, {
+        // any initialisation options go here
+        initialCountry: "ng",
+        geoIpLookup: function (success, failure) {
+          $.get("https://ipinfo.io", function () {}, "jsonp").always(function (
+            resp
+          ) {
+            var countryCode = resp && resp.country ? resp.country : "us";
+            success(countryCode);
+          });
+        },
       });
-      const info = document.querySelector(".alert-info");
-
-      function process(event) {
-        event.preventDefault();
-
-        const phoneNumber = phoneInput.getNumber();
-
-        info.style.display = "";
-        info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
-      }
     </script>
+    <script src="./tel-input.js"></script>
   </body>
 </html>
