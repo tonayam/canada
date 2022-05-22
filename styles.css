@@ -1,6 +1,10 @@
 @import "./styleSheets/text.css";
 @import "./styleSheets/reset.css";
 @import "./styleSheets/components.css";
+
+.intl-tel-input {
+  width: 100%;
+}
 @keyframes textChange {
   0% {
     content: "Easy";
@@ -18,7 +22,7 @@
 
 @media screen and (max-width: 450px) {
   header {
-    height: 100vh;
+    min-height: 100vh;
     background: url(./Images/hero-image.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,7 +30,7 @@
   header span {
     color: #ace7e9;
   }
-  header span::before {
+  h1 span::before {
     content: "";
     animation: textChange 6s infinite linear;
   }
