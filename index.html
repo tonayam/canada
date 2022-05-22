@@ -7,13 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Canada Japa</title>
     <!-- Telephone -->
-    <!-- <link
-      rel="stylesheet"
-      href="./node_modules/intl-tel-input/build/css/intlTelInput.css"
-    /> -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+      href="./node_modules/intl-tel-input/build/css/intlTelInput.css"
     />
     <!-- Swiper CDN -->
     <link
@@ -337,32 +333,9 @@
         },
       });
     </script>
+    <!-- International Telephone -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <!-- Initializing telephone script -->
-    <script>
-      const phoneInputField = document.querySelector("#phone");
-      const phoneInput = window.intlTelInput(phoneInputField, {
-        utilsScript:
-          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-      });
-      const info = document.querySelector(".alert-info");
-
-      function process(event) {
-        event.preventDefault();
-
-        const phoneNumber = phoneInput.getNumber();
-
-        info.style.display = "";
-        info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
-      }
-    </script>
-    <script src="./app.js"></script>
+    <script src="./tel-input.js"></script>
   </body>
 </html>
-
-<!-- Use as a Vanilla JS plugin -->
-<!-- <script src="build/js/intlTelInput.min.js"></script> -->
-<!-- Use as a jQuery plugin -->
-<!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="build/js/intlTelInput-jquery.min.js"></script>
-    <script src="./app.js"></script> -->
