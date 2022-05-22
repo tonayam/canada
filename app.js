@@ -3,6 +3,7 @@ var input = document.querySelector("#telephone");
 window.intlTelInput(input, {
   // options here
   initialCountry: "ng",
+  preferredCountries: ["us", "ng"],
 });
 
 // jQuery
