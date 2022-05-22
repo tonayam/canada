@@ -6,6 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Canada Japa</title>
+    <!-- Telephone -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/intl-tel-input/build/css/intlTelInput.css"
+    />
     <!-- Swiper CDN -->
     <link
       rel="stylesheet"
@@ -219,6 +224,8 @@
               placeholder="Phone Number"
             />
             <br />
+            <div class="alert alert-info" style="display: none"></div>
+            <br />
             <textarea
               name="message"
               id="message"
@@ -287,5 +294,13 @@
         },
       });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <!-- Initializing telephone script -->
+    <!-- Use as a Vanilla JS plugin -->
+    <script src="build/js/intlTelInput.min.js"></script>
+    <!-- Use as a jQuery plugin -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="build/js/intlTelInput-jquery.min.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
