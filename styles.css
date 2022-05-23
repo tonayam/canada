@@ -1,7 +1,6 @@
 @import "./styleSheets/text.css";
 @import "./styleSheets/reset.css";
 @import "./styleSheets/components.css";
-@import "./styleSheets/tel.css";
 
 @keyframes textChange {
   0% {
