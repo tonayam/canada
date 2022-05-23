@@ -9,12 +9,8 @@
     <!-- Telephone -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+      href="  ./node_modules/intl-tel-input/build/css/intlTelInput.min.css"
     />
-    <!-- <link
-      rel="stylesheet"
-      href="./node_modules/intl-tel-input/build/css/intlTelInput.css"
-    /> -->
     <!-- Swiper CDN -->
     <link
       rel="stylesheet"
@@ -338,27 +334,15 @@
     </script>
     <!-- International Telephone -->
     <!-- <script src="./node_modules/intl-tel-input/build/js/intlTelInput.js"></script> -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
- </head>
- <body>
- </body>
-</html>
+    <script src="./node_modules/intl-tel-input/build/js/intlTelInput.min.js"></script>
     <!-- Initializing telephone script -->
     <script>
-      var input = document.querySelector("#phone");
-      window.intlTelInput(input, {
-        // any initialisation options go here
-        initialCountry: "ng",
-        geoIpLookup: function (success, failure) {
-          $.get("https://ipinfo.io", function () {}, "jsonp").always(function (
-            resp
-          ) {
-            var countryCode = resp && resp.country ? resp.country : "us";
-            success(countryCode);
-          });
-        },
+      var input = document.querySelector(`#phone`);
+      var iti = window.intlTelInput(input, {
+        initialCountry: `ng`,
+        nationalMode: true,
+        utilsScript: `./node_modules/intl-tel-input/build/js/utils.js`,
       });
     </script>
-    <script src="./tel-input.js"></script>
   </body>
 </html>
