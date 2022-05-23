@@ -6,6 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Canada Japa</title>
+    <!-- Int Tel Input -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
     <!-- Swiper CDN -->
     <link
       rel="stylesheet"
@@ -25,11 +30,6 @@
     />
     <!-- my styles -->
     <link rel="stylesheet" href="./styles.css" />
-    <!-- Int Tel Input -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-    />
   </head>
   <body class="d-lg-none d-md-none">
     <!-- NavBar -->
@@ -336,8 +336,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <!-- Initializing telephone script -->
     <script>
+      function getIp(callback) {
+        fetch("https://ipinfo.io/json?token=432a885b03ef3a", {
+          headers: { Accept: "application/json" },
+        })
+          .then((resp) => resp.json())
+          .catch(() => {
+            return {
+              country: "us",
+            };
+          })
+          .then((resp) => callback(resp.country));
+      }
+
       const phoneInputField = document.querySelector("#phone");
       const phoneInput = window.intlTelInput(phoneInputField, {
+        initialCountry: "auto",
+        geoIpLookup: getIp,
         utilsScript:
           "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
       });

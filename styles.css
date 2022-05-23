@@ -1,10 +1,7 @@
 @import "./styleSheets/text.css";
 @import "./styleSheets/reset.css";
 @import "./styleSheets/components.css";
-
-.intl-tel-input {
-  width: 100%;
-}
+@import "./styleSheets/tel.css";
 @keyframes textChange {
   0% {
     content: "Easy";
