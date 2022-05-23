@@ -25,10 +25,10 @@
     />
     <!-- my styles -->
     <link rel="stylesheet" href="./styles.css" />
-    <!-- Telephone -->
+    <!-- Int Tel Input -->
     <link
       rel="stylesheet"
-      href="  ./node_modules/intl-tel-input/build/css/intlTelInput.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
     />
   </head>
   <body class="d-lg-none d-md-none">
@@ -333,15 +333,13 @@
       });
     </script>
     <!-- International Telephone -->
-    <!-- <script src="./node_modules/intl-tel-input/build/js/intlTelInput.js"></script> -->
-    <script src="./node_modules/intl-tel-input/build/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <!-- Initializing telephone script -->
     <script>
-      var input = document.querySelector(`#phone`);
-      var iti = window.intlTelInput(input, {
-        initialCountry: `ng`,
-        nationalMode: true,
-        utilsScript: `./node_modules/intl-tel-input/build/js/utils.js`,
+      const phoneInputField = document.querySelector("#phone");
+      const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
       });
     </script>
   </body>
